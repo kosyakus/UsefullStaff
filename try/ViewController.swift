@@ -10,6 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var myView: UIView!
     @IBOutlet weak var htmlLabel: UILabel!
     let myVar = 404
     let errorDescription = "page not found"
@@ -29,15 +30,16 @@ class ViewController: UIViewController {
             // some default attribute to use for text
             let baseAttributes: [NSAttributedString.Key: Any] = [.font: UIFont(name: "Georgia-Italic", size: 14) ?? .systemFont(ofSize: 14), .foregroundColor: UIColor.orange]
             
-//            let firstVar = NSAttributedString(string: "\(myVar)", attributes: baseAttributes)
-//            let secondVar = NSAttributedString(string: errorDescription, attributes: baseAttributes)
+            let firstVar = NSAttributedString(string: "\(myVar)", attributes: baseAttributes)
+            let secondVar = NSAttributedString(string: errorDescription, attributes: baseAttributes)
             
-            let firstVar = NSAttributedString(string: "\(myVar)")
-            let secondVar = NSAttributedString(string: errorDescription)
+//            let firstVar = NSAttributedString(string: "\(myVar)")
+//            let secondVar = NSAttributedString(string: errorDescription)
             
-            let attributedText = self.view.firstAndSecondAttributedText(firstText: "\(myVar)", secondText: errorDescription, firstTextColor: .blue, firstTextSize: 14.0, firstTextWeight: .bold, secondTextColor: .purple, secondTextSize: 17.0, secondTextWeight: .light, withSpace: true)
+            //let attributedText = self.view.firstAndSecondAttributedText(firstText: "\(myVar)", secondText: errorDescription, firstTextColor: .blue, firstTextSize: 14.0, firstTextWeight: .bold, secondTextColor: .purple, secondTextSize: 17.0, secondTextWeight: .light, withSpace: true)
             
             htmlLabel.attributedText = NSAttributedString(format: attributedString, args: firstVar, secondVar)
+            //htmlLabel.text = String(format: "У вас %@ общих знакомых из %@ стран, узнайте подробности!", errorDescription, errorDescription)
 
         } catch _ {
             print("Cannot create attributed String")
