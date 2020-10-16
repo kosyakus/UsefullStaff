@@ -1,14 +1,14 @@
 //
-//  ViewController.swift
+//  MainViewController.swift
 //  try
 //
-//  Created by Natali on 07.03.2020.
+//  Created by Natali on 16.10.2020.
 //  Copyright © 2020 Redmadrobot. All rights reserved.
 //
 
 import UIKit
 
-class ViewController: UIViewController {
+class MainViewController: UIViewController {
 
     @IBOutlet weak var myView: UIView!
     @IBOutlet weak var htmlLabel: UILabel!
