@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E1704564254B039C0077EA36 /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1704563254B039C0077EA36 /* UIFont+Extension.swift */; };
 		E189178725389623003CADB2 /* NSAttributedString+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E189178625389623003CADB2 /* NSAttributedString+Extension.swift */; };
 		E18918442539FFF7003CADB2 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E18918422539FFF7003CADB2 /* MainViewController.swift */; };
 		E18918452539FFF7003CADB2 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E18918432539FFF7003CADB2 /* MainViewController.xib */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E1704563254B039C0077EA36 /* UIFont+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extension.swift"; sourceTree = "<group>"; };
 		E189178625389623003CADB2 /* NSAttributedString+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSAttributedString+Extension.swift"; sourceTree = "<group>"; };
 		E18918422539FFF7003CADB2 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		E18918432539FFF7003CADB2 /* MainViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
@@ -43,6 +45,7 @@
 			isa = PBXGroup;
 			children = (
 				E189178625389623003CADB2 /* NSAttributedString+Extension.swift */,
+				E1704563254B039C0077EA36 /* UIFont+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -160,6 +163,7 @@
 				E1C736E32412F20A00E60D7C /* AppDelegate.swift in Sources */,
 				E189178725389623003CADB2 /* NSAttributedString+Extension.swift in Sources */,
 				E19C0B342526501400776E13 /* UIView+extension.swift in Sources */,
+				E1704564254B039C0077EA36 /* UIFont+Extension.swift in Sources */,
 				E18918442539FFF7003CADB2 /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
