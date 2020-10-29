@@ -18,10 +18,6 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        htmlLabel.textColor = UIColor.green
-        htmlLabel.font = htmlLabel.font.withSize(20)
-        
-        // Do any additional setup after loading the view.
         //let htmlString = "<![CDATA[<b>Код ошибки:</b> %@ <br> <b>Описание ошибки:</b> %@ %@ %@)"
         let htmlString = "<font color=\"#FF5669\">Внимание!</font> Ваше предыдущее приглашение проигнорировано. <b>При очередной</b> отправке приглашения, <font color=\"#FF5669\">NumСy уже НЕ вернутся на ваш счет</font>. Это делается для защиты от слишком частых и спам-запросов."
         
@@ -29,19 +25,19 @@ class MainViewController: UIViewController {
         guard let data = htmlString.data(using: String.Encoding.utf8) else { return }
         do {
             // some default attribute to use for text
-            let baseAttributes: [NSAttributedString.Key: Any] = [.font: UIFont(name: "Georgia-Italic", size: 20) ?? .systemFont(ofSize: 14), .foregroundColor: UIColor.green]
-            
-            let attributedString = try NSAttributedString(data: data,
-                                                          options: [.documentType: NSAttributedString.DocumentType.html, .characterEncoding: String.Encoding.utf8.rawValue],
-                                                          documentAttributes: nil)
-            
-            let textRangeForFont : NSRange = NSMakeRange(0, attributedString.length)
+//            let baseAttributes: [NSAttributedString.Key: Any] = [.font: UIFont(name: "Georgia-Italic", size: 20) ?? .systemFont(ofSize: 14), .foregroundColor: UIColor.green]
+//
+//            let attributedString = try NSAttributedString(data: data,
+//                                                          options: [.documentType: NSAttributedString.DocumentType.html, .characterEncoding: String.Encoding.utf8.rawValue],
+//                                                          documentAttributes: nil)
+//
+//            let textRangeForFont : NSRange = NSMakeRange(0, attributedString.length)
             //attributedString.addAttributes([NSFontAttributeName : UIFont(name: "Arial", size: 20)!], range: textRangeForFont)
             
             
             
-            let firstVar = NSAttributedString(string: "\(myVar)", attributes: baseAttributes)
-            let secondVar = NSAttributedString(string: errorDescription, attributes: baseAttributes)
+//            let firstVar = NSAttributedString(string: "\(myVar)", attributes: baseAttributes)
+//            let secondVar = NSAttributedString(string: errorDescription, attributes: baseAttributes)
             
 //            let firstVar = NSAttributedString(string: "\(myVar)")
 //            let secondVar = NSAttributedString(string: errorDescription)
@@ -54,7 +50,7 @@ class MainViewController: UIViewController {
             
             
             
-            htmlLabel.attributedText = htmlString.htmlAttributedString(size: 20, color: .lightGray)
+            htmlLabel.attributedText = htmlString.htmlAttributedString(color: .lightGray, font: UIFont.text_Bold_18)
             
             
             
@@ -67,7 +63,8 @@ class MainViewController: UIViewController {
 }
 
 extension String {
-    func htmlAttributedString(size: CGFloat, color: UIColor) -> NSAttributedString? {
+    func htmlAttributedString(color: UIColor, font: UIFont) -> NSAttributedString? {
+        let fontWeight = font.fontDescriptor.object(forKey: .face) as! String
         let htmlTemplate = """
         <!doctype html>
         <html>
@@ -75,8 +72,9 @@ extension String {
             <style>
               body {
                 color: \(color.toHexString());
-                font-family: Georgia, serif;
-                font-size: \(size)px;
+                font-family: \(font.familyName), serif;
+                font-size: \(font.pointSize)px;
+                font-weight: \(fontWeight);
               }
             </style>
           </head>
