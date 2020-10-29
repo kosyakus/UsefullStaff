@@ -23,12 +23,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         return true
     }
-    
-    func applicationDidBecomeActive(_ application: UIApplication) {
-//        let storyboard = UIStoryboard(name: "LaunchScreen", bundle: nil)
-//        let vc = storyboard.instantiateViewController(withIdentifier: "LaunchScreen")
-//        self.window!.rootViewController!.present(vc, animated: true, completion: nil)
-    }
 
 }
 
